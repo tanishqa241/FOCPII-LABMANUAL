@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 using namespace std;
 
 int main() {
@@ -19,5 +19,29 @@ int main() {
     cout << "\nDiscount (20%): " << diss;
     cout << "\nFinal Bill Amount: " << final_amount;
 
+    return 0;
+}
+    */
+#include <iostream>
+using namespace std;
+
+class Bill {
+    int itemNo, qty;
+    float price;
+public:
+    void input() {
+        cin >> itemNo >> qty >> price;
+    }
+    void calculate() {
+        float total = qty * price;
+        float discount = total * 0.20;
+        cout << "Final Amount = " << total - discount;
+    }
+};
+
+int main() {
+    Bill b;
+    b.input();
+    b.calculate();
     return 0;
 }
